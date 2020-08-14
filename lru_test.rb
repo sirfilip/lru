@@ -23,4 +23,10 @@ describe LRU do
     assert lru.get('c').nil?
     assert lru.get('a') == 1
   end
+
+  it 'guars against invalid max size' do
+    assert_raises ArgumentError do
+      LRU.new(0)
+    end
+  end
 end

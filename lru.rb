@@ -11,6 +11,9 @@ end
 
 class LRU
   def initialize(max_items)
+    if (!max_items.instance_of?(Integer)) || (max_items < 1)
+      raise ArgumentError, "Invalid max items. Must be positive integer."
+    end
     @max_items = max_items
     @table = {}
     @head = nil
