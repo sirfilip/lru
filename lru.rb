@@ -10,8 +10,6 @@ class Node
 end
 
 class LRU
-  attr_accessor :head, :tail, :num_items, :max_items
-  
   def initialize(max_items)
     @max_items = max_items
     @table = {}

@@ -8,7 +8,7 @@ describe LRU do
     lru.set('a', 1)
     lru.set('b', 2)
     lru.set('c', 3)
-    assert_equal 2, lru.num_items
+    assert_equal 2, lru.instance_variable_get("@table").size
   end
 
   it 'removes the least visited item' do
